@@ -1,6 +1,6 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Body from "./Body";
+import { useState } from "react";
 
 const student1 = {
   name: "John",
@@ -24,14 +24,31 @@ const student3 = {
 };
 
 function App() {
-  const students = [student1, student2, student3];
+  const [count, setCount] = useState(0);
+
+  console.log(count, "this is the state");
+  const studentlist = [student1, student2, student3];
+
+  const [students, setStudents] = useState(studentlist);
+
+  const handleSignIn = () => {
+    setCount(count + 1);
+    setStudents(studentlist);
+  };
+
+  const handleSignOut = () => {
+    setStudents([]);
+  };
+
   return (
     <div className="App">
       <nav>
         <h1>Welcome to my application</h1>
-        <button>Sign in</button>
-        <button>Sign out</button>
+        <button onClick={handleSignIn}>Sign in</button>
+        <button onClick={handleSignOut}>Sign out</button>
       </nav>
+
+      <h3>You signed in {count} times </h3>
       <Body students={students}></Body>
     </div>
   );
