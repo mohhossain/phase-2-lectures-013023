@@ -1,12 +1,12 @@
 import React from "react";
 
-function StudentCard() {
+function StudentCard({student}) {
   return (
     <div className="card">
-      <h3>Name: </h3>
-      <h3>Age: </h3>
-      <h3>Profession: </h3>
-      <h3>Code: </h3>
+          <h3>Name: { student.name}</h3>
+          <h3>Age: { student.age}</h3>
+          <h3>Profession: { student.profession}</h3>
+          <h3>Code: {student.code}</h3>
     </div>
   );
 }
