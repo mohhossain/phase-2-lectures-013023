@@ -3,34 +3,10 @@ import Body from "./Body";
 import { useState, useEffect } from "react";
 import NewStudentForm from "./NewStudentForm";
 
-const student1 = {
-  name: "John",
-  age: 20,
-  profession: "student",
-  code: "JS",
-};
-
-const student2 = {
-  name: "Jane",
-  age: 21,
-  profession: "developer",
-  code: "JS",
-};
-
-const student3 = {
-  name: "Jack",
-  age: 22,
-  profession: "photographer",
-  code: "HTML",
-};
-
 function App() {
   const [count, setCount] = useState(0);
-
   console.log(count, "this is the state");
-
   const [isLoggedin, setIsLoggedin] = useState(false);
-
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
@@ -42,7 +18,6 @@ function App() {
   const handleSignIn = () => {
     setIsLoggedin(true);
     setCount(count + 1);
-    // setStudents(students);
   };
 
   const handleSignOut = () => {
