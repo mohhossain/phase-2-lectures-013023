@@ -2,11 +2,12 @@ import React, { useEffect } from "react";
 import StudentCard from "./StudentCard";
 import { useState } from "react";
 
-function Body({ students }) {
+function Body({ students, onStudentDelete }) {
   const [currentStudent, setCurrentStudent] = useState(null);
   console.log(students);
 
   const [category, setCategory] = useState("All");
+  const [profession, setProfession] = useState("All");
 
   const [studentClicked, setStudentClicked] = useState(0);
   // const [filteredStudents, setFilteredStudents] = useState(students);
@@ -16,28 +17,26 @@ function Body({ students }) {
     setCurrentStudent(name);
   };
 
-  // useEffect(() => {
-  //   console.log(students, "The original student list");
-  //   setFilteredStudents(students);
-  // }, [students]);
-
   const handleCategory = (e) => {
     console.log(e.target.value);
     setCategory(e.target.value);
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
+  const handleProfession = (e) => {
+    setProfession(e.target.value.toLowerCase());
+  };
 
   const studentsFiltered = students.filter((student) => {
-    if (category === "All") {
+    if (category === "All" && profession === "All") {
       return true;
-    } else {
+    } else if (category === "All") {
+      return student.profession === profession;
+    } else if (profession === "All") {
       return student.code === category;
+    } else {
+      return student.code === category && student.profession === profession;
     }
   });
-  // setFilteredStudents(studentsFiltered);
-  // };
 
   const studentList = studentsFiltered.map((student, index) => {
     return (
@@ -45,19 +44,24 @@ function Body({ students }) {
         key={index}
         student={student}
         updateCurrentStudent={updateCurrentStudent}
+        onStudentDelete={onStudentDelete}
       ></StudentCard>
     );
   });
   return (
     <div>
       <h3>Student count: {studentsFiltered.length}</h3>
-      <p>Current student: {currentStudent}</p>
-      <p>Student clicked: {studentClicked}</p>
       <form>
         <select onChange={handleCategory}>
           <option>All</option>
           <option name="option">Javascript</option>
           <option name="option">Python</option>
+        </select>
+
+        <select onChange={handleProfession}>
+          <option>All</option>
+          <option name="option">Student</option>
+          <option name="option">Engineer</option>
         </select>
       </form>
       {studentList}

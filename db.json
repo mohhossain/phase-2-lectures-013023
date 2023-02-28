@@ -5,75 +5,69 @@
       "name": "Jacob",
       "age": 20,
       "profession": "student",
-      "code": "Javascript"
+      "code": "Javascript",
+      "isActive": false
     },
     {
       "id": 2,
       "name": "Mary",
       "age": 21,
       "profession": "student",
-      "code": "Javascript"
-    },
-    {
-      "id": 3,
-      "name": "Peter",
-      "age": 22,
-      "profession": "student",
-      "code": "Python"
+      "code": "Javascript",
+      "isActive": false
     },
     {
       "id": 4,
       "name": "Carlos",
       "age": 23,
       "profession": "student",
-      "code": "Python"
+      "code": "Python",
+      "isActive": true
     },
     {
       "id": 5,
       "name": "Mustafa",
       "age": 24,
       "profession": "engineer",
-      "code": "Javascript"
+      "code": "Javascript",
+      "isActive": true
     },
     {
       "id": 6,
       "name": "Sara",
       "age": 25,
       "profession": "student",
-      "code": "Python"
+      "code": "Python",
+      "isActive": true
     },
     {
       "id": 7,
       "name": "Sofia",
       "age": 26,
       "profession": "engineer",
-      "code": "Javascript"
-    },
-    {
-      "id": 8,
-      "name": "Sandra",
-      "age": 27,
-      "profession": "student",
-      "code": "Python"
+      "code": "Javascript",
+      "isActive": true
     },
     {
       "id": 9,
       "name": "Maria",
       "age": 28,
       "profession": "engineer",
-      "code": "Javascript"
+      "code": "Javascript",
+      "isActive": true
     },
     {
       "id": 10,
       "name": "Luis",
       "age": 29,
       "profession": "engineer",
-      "code": "Python"
+      "code": "Python",
+      "isActive": false
     },
     {
-      "name": "Mohammad",
+      "name": "Bill",
       "age": "18",
-      "profession": "student",
+      "profession": "engineer",
       "code": "Javascript",
       "id": 11
     }

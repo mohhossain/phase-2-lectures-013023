@@ -27,6 +27,15 @@ function App() {
   const onStudentListChange = (student) => {
     setStudents([...students, student]);
   };
+
+  const onStudentDelete = (student) => {
+    console.log(student);
+    const filteredStudents = students.filter((stu) => {
+      return stu.id !== student.id;
+    });
+
+    setStudents(filteredStudents);
+  };
   return (
     <div className="App">
       <nav>
@@ -39,7 +48,7 @@ function App() {
       <NewStudentForm
         onStudentListChange={onStudentListChange}
       ></NewStudentForm>
-      <Body students={students}></Body>
+      <Body students={students} onStudentDelete={onStudentDelete}></Body>
     </div>
   );
 }
