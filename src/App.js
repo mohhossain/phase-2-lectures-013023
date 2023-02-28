@@ -1,6 +1,6 @@
 import "./App.css";
 import Body from "./Body";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import NewStudentForm from "./NewStudentForm";
 
 const student1 = {
@@ -28,19 +28,21 @@ function App() {
   const [count, setCount] = useState(0);
 
   console.log(count, "this is the state");
-  // const studentlist = [student1, student2, student3];
 
-  const [studentlist, setStudentList] = useState([
-    student1,
-    student2,
-    student3,
-  ]);
+  const [isLoggedin, setIsLoggedin] = useState(false);
 
-  const [students, setStudents] = useState([student1, student2, student3]);
+  const [students, setStudents] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:4000/students")
+      .then((res) => res.json())
+      .then((data) => setStudents(data));
+  }, [isLoggedin]);
 
   const handleSignIn = () => {
+    setIsLoggedin(true);
     setCount(count + 1);
-    setStudents(studentlist);
+    // setStudents(students);
   };
 
   const handleSignOut = () => {
@@ -48,9 +50,6 @@ function App() {
   };
 
   const onStudentListChange = (student) => {
-    // studentlist.push(student);
-    setStudentList([...studentlist, student]);
-    console.log(studentlist);
     setStudents([...students, student]);
   };
   return (
@@ -65,7 +64,7 @@ function App() {
       <NewStudentForm
         onStudentListChange={onStudentListChange}
       ></NewStudentForm>
-      <Body students={setStudents}></Body>
+      <Body students={students}></Body>
     </div>
   );
 }

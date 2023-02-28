@@ -31,7 +31,22 @@ function NewStudentForm({ onStudentListChange }) {
     console.log(name, age, profession, code);
     const student = { name, age, profession, code };
     console.log(student);
-    onStudentListChange(student);
+
+    fetch("http://localhost:4000/students", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(student),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.id) {
+          onStudentListChange(data);
+        } else {
+          console.log("Post is not successful");
+        }
+      });
   };
 
   return (
