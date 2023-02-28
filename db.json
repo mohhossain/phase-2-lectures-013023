@@ -1,0 +1,64 @@
+{
+    "students": [
+        {
+            "name": "Jacob",
+            "age": 20,
+            "profession": "student",
+            "code": "Javascript"
+        }, 
+        {
+            "name": "Mary",
+            "age": 21,
+            "profession": "student",
+            "code": "Javascript"
+        },
+        {
+            "name": "Peter",
+            "age": 22,
+            "profession": "student",
+            "code": "Python"
+        },
+        {
+            "name": "Carlos",
+            "age": 23,
+            "profession": "student",
+            "code": "Python"
+        },
+        {
+            "name": "Mustafa",
+            "age": 24,
+            "profession": "engineer",
+            "code": "Javascript"
+        },
+        {
+            "name": "Sara",
+            "age": 25,
+            "profession": "student",
+            "code": "Python"
+        },
+        {
+            "name": "Sofia",
+            "age": 26,
+            "profession": "engineer",
+            "code": "Javascript"
+        },
+        {
+            "name": "Sandra",
+            "age": 27,
+            "profession": "student",
+            "code": "Python"
+        },
+        {
+            "name": "Maria",
+            "age": 28,
+            "profession": "engineer",
+            "code": "Javascript"
+        },
+        {
+            "name": "Luis",
+            "age": 29,
+            "profession": "engineer",
+            "code": "Python"
+        }
+    ]
+}

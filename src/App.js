@@ -65,7 +65,7 @@ function App() {
       <NewStudentForm
         onStudentListChange={onStudentListChange}
       ></NewStudentForm>
-      <Body students={students}></Body>
+      <Body students={setStudents}></Body>
     </div>
   );
 }
